@@ -12,29 +12,21 @@ pipeline {
             when {
                 expression { params.RUN_PROJECT_1 }
             }
-            stages {
-                stage('Checkout El juego de la trivia') {
-                    steps {
+            steps {
+                script {
+                    stage('Checkout El juego de la trivia') {
                         git url: 'https://github.com/Guillermojuan/Entregable_1_Onetto_Storace.git', branch: 'main'
                     }
-                }
-                stage('Build El juego de la trivia') {
-                    steps {
+                    stage('Build El juego de la trivia') {
                         sh 'mvn clean install'
                     }
-                }
-                stage('Test El juego de la trivia') {
-                    steps {
+                    stage('Test El juego de la trivia') {
                         sh 'mvn test'
                     }
-                }
-                stage('Package El juego de la trivia') {
-                    steps {
+                    stage('Package El juego de la trivia') {
                         sh 'mvn package'
                     }
-                }
-                stage('Deploy El juego de la trivia') {
-                    steps {
+                    stage('Deploy El juego de la trivia') {
                         // Comando de despliegue específico para El juego de la trivia
                         // sh 'comando de despliegue proyecto trivia'
                     }
@@ -46,29 +38,21 @@ pipeline {
             when {
                 expression { params.RUN_PROJECT_2 }
             }
-            stages {
-                stage('Checkout Procesar pedidos') {
-                    steps {
+            steps {
+                script {
+                    stage('Checkout Procesar pedidos') {
                         git url: 'https://github.com/Guillermojuan/SegundaEntregaOnettoStorace.git', branch: 'main'
                     }
-                }
-                stage('Build Procesar pedidos') {
-                    steps {
+                    stage('Build Procesar pedidos') {
                         sh 'mvn clean install'
                     }
-                }
-                stage('Test Procesar pedidos') {
-                    steps {
+                    stage('Test Procesar pedidos') {
                         sh 'mvn test'
                     }
-                }
-                stage('Package Procesar pedidos') {
-                    steps {
+                    stage('Package Procesar pedidos') {
                         sh 'mvn package'
                     }
-                }
-                stage('Deploy Procesar pedidos') {
-                    steps {
+                    stage('Deploy Procesar pedidos') {
                         // Comando de despliegue específico para Procesar pedidos
                         // sh 'comando de despliegue proyecto pedidos'
                     }
@@ -80,29 +64,21 @@ pipeline {
             when {
                 expression { params.RUN_PROJECT_3 }
             }
-            stages {
-                stage('Checkout Consultas en USQL') {
-                    steps {
+            steps {
+                script {
+                    stage('Checkout Consultas en USQL') {
                         git url: 'https://github.com/Guillermojuan/Entrega_N3_USQL.git', branch: 'main'
                     }
-                }
-                stage('Build Consultas en USQL') {
-                    steps {
+                    stage('Build Consultas en USQL') {
                         sh 'mvn clean install'
                     }
-                }
-                stage('Test Consultas en USQL') {
-                    steps {
+                    stage('Test Consultas en USQL') {
                         sh 'mvn test'
                     }
-                }
-                stage('Package Consultas en USQL') {
-                    steps {
+                    stage('Package Consultas en USQL') {
                         sh 'mvn package'
                     }
-                }
-                stage('Deploy Consultas en USQL') {
-                    steps {
+                    stage('Deploy Consultas en USQL') {
                         // Comando de despliegue específico para Consultas en USQL
                         // sh 'comando de despliegue proyecto usql'
                     }
